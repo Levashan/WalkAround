@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PriceHolder : MonoBehaviour
 {
-    //add the objects to the list
     [SerializeField] private List<AssignObjectMaterial> objectPricesToCalculate = new List<AssignObjectMaterial>();
     private TextMeshProUGUI priceText;
 
@@ -12,10 +11,7 @@ public class PriceHolder : MonoBehaviour
     private void FixedUpdate()
     {
         float price = 0f;
-        for (int i = 0; i < objectPricesToCalculate.Count; i++)
-        {
-            price += objectPricesToCalculate[i].GetPrice();
-        }
+        for (int i = 0; i < objectPricesToCalculate.Count; i++)  price += objectPricesToCalculate[i].GetPrice();
         priceText.text = price.ToString();
     }
 }

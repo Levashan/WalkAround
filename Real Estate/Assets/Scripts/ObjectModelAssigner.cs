@@ -17,8 +17,7 @@ public class ObjectModelAssigner : MonoBehaviour
             var assign = raycastTarget.selectedObject[i].GetComponent<AssignObjectMaterial>();
             if(assign != null)
             {
-                if (assign.modelUpdate)
-                    assign.ChangeModelAndSize(indexNumber);
+                if (assign.modelUpdate) assign.ChangeModelAndSize(indexNumber);
             }
          }
     }

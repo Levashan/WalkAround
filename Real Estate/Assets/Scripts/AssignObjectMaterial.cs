@@ -13,7 +13,11 @@ public class AssignObjectMaterial : MonoBehaviour
     [SerializeField] private GameObject[] modelOptions;
     [HideInInspector] public float materialPrice;
 
-    private void Start() => HideMaterialOptions(); 
+    private void Start()
+    {
+        HideMaterialOptions();
+        materialPrice = matHolder[0].MaterialPrice;
+    }
     public void DisplayMaterialOptions()
     {
         if (materialUpdate) 

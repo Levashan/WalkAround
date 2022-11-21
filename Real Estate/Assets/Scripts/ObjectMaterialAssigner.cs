@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +14,7 @@ public class ObjectMaterialAssigner : MonoBehaviour
             var assign = raycastTarget.selectedObject[i].GetComponent<AssignObjectMaterial>();
             if(assign != null)
             {
-                if (assign.materialUpdate)  
-                    assign.ChangeMaterial(indexNumber);
+                if (assign.materialUpdate)  assign.ChangeMaterial(indexNumber);
             }
          }
     }

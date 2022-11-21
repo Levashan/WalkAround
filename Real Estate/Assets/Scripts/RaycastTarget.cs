@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class RaycastTarget : MonoBehaviour
 {
     public List<GameObject> selectedObject = new List<GameObject>();
-    [SerializeField]
-    private TextMeshProUGUI objectName;
+    [SerializeField] private TextMeshProUGUI objectName;
+    [SerializeField] private GameObject confirmButton;
     public void Update()
     {
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward), Color.red, 50);
@@ -22,17 +22,16 @@ public class RaycastTarget : MonoBehaviour
                     objectName.text = hit.transform.name;
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
+                    confirmButton.SetActive(true);
                 }
             }
     }
     public void ResetCursor()
     {
-        for (int i = 0; i < selectedObject.Count; i++)
-        {
-            selectedObject[i].GetComponent<AssignObjectMaterial>().HideMaterialOptions();
-        }
+        for (int i = 0; i < selectedObject.Count; i++) selectedObject[i].GetComponent<AssignObjectMaterial>().HideMaterialOptions();
         selectedObject.Clear();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        confirmButton.SetActive(false);
     }
 }
