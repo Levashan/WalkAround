@@ -3262,6 +3262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a540d98c0516a2045826e39b1723ee33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPricesToCalculate:
+  - {fileID: 1999501290}
+  - {fileID: 2104340926}
 --- !u!114 &1659639089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3627,6 +3630,7 @@ MonoBehaviour:
   - {fileID: 2044891878}
   - {fileID: 1066372069}
   - {fileID: 1476570237}
+  materialPrice: 0
 --- !u!1 &2044891878
 GameObject:
   m_ObjectHideFlags: 0
@@ -4112,10 +4116,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d241a02cf58e2f94da9309f9628eca54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialUpdate: 0
+  materialUpdate: 1
   modelUpdate: 0
-  matHolder: []
-  modHolder: []
+  matHolder:
+  - MaterialPrice: 213
+    MaterialsAvailable: {fileID: 2100000, guid: 44001ad5a1b1bed448c2ae89218c36b7,
+      type: 2}
+    MaterialSprite: {fileID: 21300000, guid: ff9f3071f247f9a43a7b2d69e9fdbe2c, type: 3}
+  - MaterialPrice: 111
+    MaterialsAvailable: {fileID: 2100000, guid: 9f7e63fa905d3b5458b056f82ddde9cd,
+      type: 2}
+    MaterialSprite: {fileID: 21300000, guid: 07006b286401330458357e71e61d08ee, type: 3}
+  - MaterialPrice: 120
+    MaterialsAvailable: {fileID: 2100000, guid: 6b7d4834cf09166429f6344102ba9487,
+      type: 2}
+    MaterialSprite: {fileID: 21300000, guid: 93f7947b685d86c43ba28e8bd424679c, type: 3}
+  modHolder:
+  - ObjectMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    ModelSprite: {fileID: 21300000, guid: c8a69ecdf54ac8e4b873466605de27ff, type: 3}
+    ObjectScale: {x: 1, y: 1, z: 1}
+  - ObjectMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    ModelSprite: {fileID: 21300000, guid: cdb88fdb0cf46b244a667edaff21c7df, type: 3}
+    ObjectScale: {x: 2, y: 2, z: 2}
+  - ObjectMesh: {fileID: 4579454407841743219, guid: 921215080bfd72845b7d3d2ba307d32f,
+      type: 3}
+    ModelSprite: {fileID: 21300000, guid: c9ed6d6ea2f9657409bfa068d4846139, type: 3}
+    ObjectScale: {x: 5, y: 5, z: 5}
   materialOptions:
   - {fileID: 2081779494}
   - {fileID: 289468021}
@@ -4126,7 +4152,17 @@ MonoBehaviour:
   - {fileID: 849390238}
   - {fileID: 10120892}
   - {fileID: 950085138}
-  modelOptions: []
+  modelOptions:
+  - {fileID: 278788347}
+  - {fileID: 64131892}
+  - {fileID: 1013681138}
+  - {fileID: 1374901896}
+  - {fileID: 308291458}
+  - {fileID: 1607211330}
+  - {fileID: 2044891878}
+  - {fileID: 1066372069}
+  - {fileID: 1476570237}
+  materialPrice: 0
 --- !u!1001 &5894446061992431419
 PrefabInstance:
   m_ObjectHideFlags: 0

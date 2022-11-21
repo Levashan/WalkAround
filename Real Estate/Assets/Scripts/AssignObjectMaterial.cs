@@ -1,25 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AssignObjectMaterial : MonoBehaviour
 {
-
     public bool materialUpdate, modelUpdate;
-    [SerializeField]
-    private MaterialHolder[] matHolder;
-    [SerializeField]
-    private ModelHolder[] modHolder;
-    [SerializeField]
-    private GameObject[] materialOptions;
-    [SerializeField]
-    private GameObject[] modelOptions;
-    
-    private void Start() => HideMaterialOptions();
+    [SerializeField] private MaterialHolder[] matHolder;
+    [SerializeField] private ModelHolder[] modHolder;
+    [SerializeField] private GameObject[] materialOptions;
+    [SerializeField] private GameObject[] modelOptions;
+    [HideInInspector] public float materialPrice;
+
+    private void Start() => HideMaterialOptions(); 
     public void DisplayMaterialOptions()
     {
-        if (materialUpdate)
+        if (materialUpdate) 
         {
             for (int i = 0; i < matHolder.Length; i++)
             {
@@ -44,16 +41,14 @@ public class AssignObjectMaterial : MonoBehaviour
     public void ChangeMaterial(int index)
     {
         GetComponent<MeshRenderer>().material = matHolder[index].MaterialsAvailable;
-    }
-    public float PriceUpdater(int index)
-    {
-        return matHolder[index].MaterialPrice;
+        materialPrice = matHolder[index].MaterialPrice;
     }
     public void ChangeModelAndSize(int index)
     {
         GetComponent<MeshFilter>().mesh = modHolder[index].ObjectMesh;
         this.transform.localScale = modHolder[index].ObjectScale;
     }
+    public float GetPrice() => materialPrice;
 }
 [System.Serializable]
 public class MaterialHolder
@@ -62,6 +57,7 @@ public class MaterialHolder
     public Material MaterialsAvailable;
     public Sprite MaterialSprite;
 }
+
 [System.Serializable]
 public class ModelHolder
 {

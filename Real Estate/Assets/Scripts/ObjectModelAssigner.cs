@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class ObjectModelAssigner : MonoBehaviour
 {
     private RaycastTarget  raycastTarget;
-    [Range(0, 8)]
-    public int indexNumber;
+    [Range(0, 8)] public int indexNumber;
 
     private void Start() => GetComponent<Button>().onClick.AddListener(() => AssignMod());
     private void AssignMod()

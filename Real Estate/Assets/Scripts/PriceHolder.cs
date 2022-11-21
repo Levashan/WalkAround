@@ -1,22 +1,21 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class PriceHolder : MonoBehaviour
 {
-    private static TextMeshProUGUI priceText;
+    //add the objects to the list
+    [SerializeField] private List<AssignObjectMaterial> objectPricesToCalculate = new List<AssignObjectMaterial>();
+    private TextMeshProUGUI priceText;
 
-    private void Start()
+    private void Start() => priceText = GetComponent<TextMeshProUGUI>(); 
+    private void FixedUpdate()
     {
-        priceText = GetComponent<TextMeshProUGUI>();
-    }
-    private static float price;
-    public static float OverAllPrice
-    {
-        get => price;
-        set
+        float price = 0f;
+        for (int i = 0; i < objectPricesToCalculate.Count; i++)
         {
-            price = value;
-            priceText.text = value.ToString();
+            price += objectPricesToCalculate[i].GetPrice();
         }
+        priceText.text = price.ToString();
     }
 }
