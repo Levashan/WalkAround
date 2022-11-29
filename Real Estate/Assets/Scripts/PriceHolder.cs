@@ -16,7 +16,7 @@ public class PriceHolder : MonoBehaviour
         pricelist.text = null;
         for (int i = 0; i < _objectInfo.Length; i++)
         {
-            price += _objectInfo[i].objectPriceToCalculate.GetPrice();
+            price += _objectInfo[i].objectPriceToCalculate.GetPrice();          
             pricelist.text += $"{_objectInfo[i].objectName} : R {_objectInfo[i].objectPriceToCalculate.GetPrice()} \n";
         }
         priceText.text = price.ToString();
